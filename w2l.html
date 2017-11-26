@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>分行分列工具</title>
+		<style>
+			body{
+				
+				
+			}
+			#main{
+				margin: 0 auto;
+				width: 800px;
+				
+				text-align: center;
+				font-size: 0.8em;
+			}
+			#word{
+				margin-top: 50px;
+				height: 200px;
+				width: 400px;
+				text-align:center;
+				
+				
+			}
+			#button{
+				
+				align-content: 
+				height: auto;  
+				margin: 5px;
+				
+		
+				width: 50px;
+			}
+			.we{
+				margin: 0 auto;
+				text-align: center;
+				width: ;
+			}
+			
+			table,tr,td{
+				border:1px solid black;
+				
+			}
+			
+			
+			margin: 0 auto;
+				width: 800px;
+				font-size: 0.8em;
+				text-align: center;}
+			
+		</style>
+	   <script type="text/javascript">
+	   	var arr = new Array();
+	   	var tb_str;
+	   	 var selectvalue=null; 
+	   	
+	   	  function Tb_list(b_type){
+             	tb_str="<table>";
+             	
+             	
+	    	if(b_type=='h'){
+	    	
+	    	tb_str+="<tr>";
+	    	for(var j=0;j<arr.length;j++)
+	    		{ 
+	    		tb_str+="<td>"+arr[j]+"</td>";  
+	    		}
+	    		tb_str+="</tr>";
+	    	
+	    		
+	    	}else if(b_type=='s'){
+	    		
+	    		for(var j=0;j<arr.length;j++)
+	    		{ 
+	    		tb_str+="<tr><td>"+arr[j]+"</td></tr>";  
+	    		}
+	    		
+	    	}else{alert("未选择分行格式");}
+	    	
+	    	
+	    }
+             
+	   	
+	   	
+	   	
+	   	 function Cli(){
+	   		var word=document.getElementById("word");
+	   		var button=document.createElement("button");
+	   		var tb1=document.getElementById("tb");
+	   		
+	   		
+	   		var radio=document.getElementsByName("choose");
+           
+             
+             var i;
+             
+              
+             var sub=prompt("请输入换号符号");
+             	//alert(sub);
+             	if (sub==null) {
+             		sub=prompt("重新输入");
+             	}
+             	var str=word.value;
+             	
+             	var l=888,i=0;
+             	
+             	while(l!=-1){
+             		
+             		l=str.indexOf(sub);
+             		if(l<0){
+             			break;
+             		}
+             		
+             		arr[i]=str.substr(0,l);
+             		str=str.substr(l+1,str.length);
+             		i++
+             		
+             	}
+             	arr[i]=str.substr(0,str.length);
+             	///////////////////
+             	for(i=0;i<radio.length;i++){
+                   if(radio[i].checked==true) {
+                            selectvalue=radio[i].value;
+
+                            break;
+                  }
+               }
+          // 
+             /////////////////////
+        
+        
+           
+           Tb_list(selectvalue); 
+           tb_str+="</table>";
+          
+             tb1.innerHTML=tb_str;
+            
+             
+             
+             
+	   	}
+	   	 
+	    
+	   </script>
+	</head>
+	<body>
+		<div id="main">
+			<div class="we">
+			<textarea  name="word" id="word"  > 请输入转换内容</textarea>
+			</div>
+			<input type="button" onclick="Cli()" name="button" id="button" value="转换"/>
+			
+			横排<input type="radio" name="choose" id="radio" value="h"/>
+			竖排<input type="radio" name="choose" id="radio"  value="s"/>
+		
+		</div>
+		<div class="we" ><div class="tb" id="tb"></div></div>
+		
+	</body>
+</html>
