@@ -1,13 +1,137 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style>  .but{ color:red; } </style>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-             
-		<h2><a class="but" href="w2l.html">工具</a></h2>
-		<h2><a class="tt" href="https://jueliany.github.io/mytest/">lol页面</a></h2>
-	</body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jueliany</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style type="text/css">
+		header{
+			width: 100%;
+			height: 46px;
+			background-color: #111;
+
+		}
+		article{
+			width: 1200px;
+			background-color: #fff;
+			height: 1500px;
+			background: rgba(255,255,255,0.5);overflow: hidden; 
+		}
+		footer{
+			width: 100%;
+			height: 60px;
+			background-color: #111;
+			position:relative;
+			bottom:0px;
+		}
+		.top {
+			width: 1200px;
+			height: 46px;
+			margin: 0 auto;
+			color: #fff;
+		}
+
+		.navigation *{
+			float: left;	
+		}
+		.navigation a{
+			line-height: 46px;
+			padding:0 15px;
+			color: #fff;
+		}
+		.logo_font{
+		font-size: 1.5em;
+		padding: 9px 0 0 0;
+
+		}
+		.m_top{display: none;}
+
+
+		.banner{
+			height: 330px;
+			width:1100px;
+			padding:35px 50px;
+		}
+		.newblog{width: 750px;background-color: #eee;height: 500px;margin-left: 50px;margin_right:20px;background-color: #fff;}
+		.right_list{width: 330px;height: 500px;margin-right: 50px;}
+		.right_list *{background-color: #fff;width: 330px}
+		.module_name{padding: 0 10px; line-height: 40px; height: 40px; font-size: 18px; border-bottom: 1px solid #e5e5e5; border-left: 5px solid #333; color: #333; }
+		.blog_pic{padding-right: 25px;}
+		.blog_word li{margin: 10px;border-bottom: 1px solid #e5e5e5;font-size: 14px;color: #555;float: left; width: 730px; }
+		.blog_info{width: 730px;padding:20px 0px 20px 0px; }
+		.time{font-size: 10px;}
+		.goto_blog{font-size: 14px;color: green ;padding-right:15px;}
+		.bottom_info{height: 20px;width: 100%;}
+		.blog_word li img{width: 220px;height: 100px;}
+		.line{height: 2px;background-color: #000;width: 1px; 
+			transition:width 3s;
+			-moz-transition:width 3s; /* Firefox 4 */
+			-webkit-transition:width 3s; /* Safari and Chrome */
+			-o-transition:width 3s; /* Opera */}
+		.blog_word li:hover .line {width: 100%;}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="top">
+			<h1 class="logo_font fl">宁静致远</h1>
+			<ul class="navigation fr">
+				<li><a href="">博客首页</a></li>
+				<li><a href="">博文列表</a></li>
+				<li><a href="">外部链接</a></li>
+				<li><a href="">关于我</a></li>
+				<li><a href="">留言</a></li>
+			</ul>
+		</div>
+		<div class="m_top"></div>
+	</header>
+	<article>
+		<div class="banner">
+			
+		</div>
+		<div class="newblog fl">
+			<h2 class="module_name ">最新文章</h2>
+			<ul class="blog_word">
+				<li >
+					<h3 class="title_top">
+						<a class="blog_classify" href="">个人博客</a>
+						<a class="blog_title" href="">帝国cms首页或者列表无图，不使用默认图片的方法</a>
+					</h3>
+					<div class="blog_info fl">
+						<a class="blog_pic fl" href="">
+							<img  src="img/t01.jpg">
+						</a>
+						帝国cms 首页或者列表无图，不使用默认图片的方法帝国cms列表页图文展示，或者首页图文展示，如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，你都得花时间去配图，所以，可有使用以下方法来实现。
+						
+					</div>
+					
+					<p class="bottom_info fl">
+						<span class="time fl">2018-03-26</span>
+						<a class="goto_blog fr" href="">阅读原文>></a>
+					</p>
+					<div class="line fl"></div>
+					</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="right_list fr ">
+			<div class="tuijian">
+				<h2 class="module_name ">推荐</h2>
+			</div>
+			<div class="link">
+				<h2 class="module_name ">连接</h2>
+			</div>
+			<div class="weixin">
+				<h2 class="module_name ">微信</h2>
+			</div>
+		</div>
+	</article>
+	<footer></footer>
+</body>
 </html>
