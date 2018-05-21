@@ -10,10 +10,12 @@ header{
 			width: 1200px;
 			background-color: #fff;
 			background: rgba(255,255,255,0.5); 
-			display: table;
-			 height: 1450px;
+			padding-bottom:30px;
+			
+			 
   
 		}
+		
 		.newblog{box-shadow:2px 2px 10px 0px #888}
 		.right_list>div{box-shadow:2px 2px 10px 0px #888}
 		/*底部*/
@@ -98,6 +100,7 @@ header{
 			-webkit-transition:width 2s; /* Safari and Chrome */
 			-o-transition:width 2s; /* Opera */}
 		.blog_word li:hover .line {width: 100%;}
+		.blog_word li:last-child {}
 
 
 

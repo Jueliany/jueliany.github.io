@@ -2,7 +2,7 @@
 .search{height: 70px;}
 .search_text{ padding-left: 5px; width: 213px;height: 28px; background-color:#EDEDED; margin:20px 0 20px 25px;font-size: 14px; float: left; border-radius: 5px 0 0 5px; border:1px solid #999; }
 .search_button{width: 60px; font-size: 14px;height: 30px; margin:20px 0 20px 0px; float: left;background-color: #333;border: none;border-radius: 0 5px 5px 0; color: #fff;text-align: center;line-height: 30px}
-.blog_text{ padding:20px;  ;font-size: 14px;box-shadow:2px 2px 10px 0px #888;width: 710px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;}
+.blog_text{min-height: 1060px; padding:20px;  ;font-size: 14px;box-shadow:2px 2px 10px 0px #888;width: 710px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;}
 .blog_position{padding: 10px 0;border-bottom: 2px solid #333; }
 .blog_position span{font-weight: bold;}
 .blog_position a{ color: #333; }

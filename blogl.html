@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jueliany</title>	
+	<link rel="stylesheet"  href="/cssd/reset.css">
+	<link rel="stylesheet"  href="/cssd/main.css">
+	<link rel="stylesheet"  href="/cssd/blog.css">
+	 <link rel="icon" href="/img/favicon.ico">
+	 <script type="text/javascript" src="/JS/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<header>
+		<div class="logo"></div>
+		<div class="top">
+			<h1 class="logo_font fl">宁静致远</h1>
+			<ul class="navigation fr">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="blog.html">博文</a></li>
+				<li><a href="">关于</a></li>
+			</ul>
+		</div>
+		<div class="m_top"></div>
+	</header>
+	<article>
+		<div class="banner">
+			<!-- 预留 -->
+		</div>
+		<div class="blog_text fl">
+			<p class="blog_position"><span>当前：</span><a href="">首页</a>>
+			<a href="">博文</a>>
+			<a id="bf" href=""></a></p>
+			<h3  id="blog_text_title" class="blog_text_title" >林青霞电影动图</h3>
+			<p><span id="author" class="author">陈志远</span><span class="blog_date">2018-05-14</span></p>
+    		<div class="blog_area">
+			<span id="bl_text">
+			</span><br><br>
+			<img id="bl_img" src="" />
+			<p  id="bl_img_title"><br><br><br></p>
+		    </div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+                      $.ajax(
+                            {
+                            url:"/xml/blog.xml",      //发送请求的文件
+                            type:"get",          //设置提交方式
+                            dataType:"xml",       //接收服务端数据的格式
+                            success:function(xml){   //发送成功时执行这个函数，xml代表返回的xml形式的数据
+                                $(xml).find("text").each(function(){
+                                    var title = $(this).find("title").text();
+                                    $('#blog_text_title').html(title );
+                                    var bf = $(this).find("bf").text();
+                                    $('#bf').html(bf);
+                                    var author = $(this).find("author").text();
+                                     $('#author').html(author);
+                                    var html1=$(this).find("html").text();
+                                    $('#bl_text').html(html1);       
+                                     var img=$(this).find("img").text();
+                                    $('#bl_img').attr('src',img);                                
+                                });
+                            },
+                              //发生错误时执行此函数           
+                              //XMLHttpRequest.status表示请求状态，200表示成功
+                              //XMLHttpRequest.readyState表示接收状态4表示接收完毕
+                            error:function(XMLHttpRequest, textStatus, errorThrown){
+                                alert(XMLHttpRequest.status);
+                                alert(XMLHttpRequest.readyState);
+                            }
+                            }
+                      );
+                            
+				});
+			</script>
+
+			
+		</div>
+		<div class="right_list fr ">
+			<div class="search fl">
+				<p> <input class="search_text" type="text" placeholder="请输入关键字" /><a href="" class="search_button">搜索</a></p>
+			</div>
+
+
+
+			<div class="person_info fl">
+				 <div class="bgpic"  > <img class="touxiang" src="img/touxiang.jpg" /></div>
+				
+				<h5 class="person_name">Jueliany | 陈志远</h5>
+				<p class="person_position">Web前端方向、网页设计</p>
+				<p class="person_text">一个90后大学生，有理想有干劲，2017学习前端，目标前端“攻城狮”。既然选择了远方，便只顾风雨兼程。既然目标是地平线，留给世界的只能是背影 </p>
+
+			</div>
+			
+			<div class="link fl">
+				<h2 class="module_name  ">个人连接</h2>
+				<ul class="link_list">
+					<li><a href="https://weibo.com/u/1549701483/">个人微博</a></li>
+					<li><a href="https://github.com/Jueliany/">Github</a></li>
+					<li><a href="mailto:494228569@qq.com">联系方式</a></li>
+				</ul>
+			</div>
+			<div class="weixin fl">
+				<h2 class="module_name ">微信公众号</h2>
+				<img src="img/erweima.jpg">
+  
+			</div>
+		</div>
+		<div style="clear:both;background-color:#C00; margin:50px 0px; border:0px; padding:0px;"></div>
+	</article>
+	<footer>
+		<p ><a href="mailto:jueliany@foxmail.com">Jueliany</a> @2017-2018  |  Github Pages </p>
+	</footer>
+
+</body>
+</html>
