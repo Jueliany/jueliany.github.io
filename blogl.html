@@ -8,6 +8,7 @@
 	<link rel="stylesheet"  href="/cssd/blog.css">
 	 <link rel="icon" href="/img/favicon.ico">
 	 <script type="text/javascript" src="/JS/jquery-3.3.1.js"></script>
+	  <script  src="/JS/Vue.js"></script>
 </head>
 <body>
 	<header>
@@ -39,14 +40,16 @@
 			<p  id="bl_img_title"><br><br><br></p>
 		    </div>
 			<script type="text/javascript">
+
 				$(document).ready(function(){
+					var id=Urlid();
                       $.ajax(
                             {
-                            url:"/xml/blog.xml",      //发送请求的文件
+                            url:"/xml/"+id+".xml",      //发送请求的文件
                             type:"get",          //设置提交方式
                             dataType:"xml",       //接收服务端数据的格式
                             success:function(xml){   //发送成功时执行这个函数，xml代表返回的xml形式的数据
-                                $(xml).find("text").each(function(){
+                                $(xml).find("blog").each(function(){
                                     var title = $(this).find("title").text();
                                     $('#blog_text_title').html(title );
                                     var bf = $(this).find("bf").text();
@@ -56,7 +59,9 @@
                                     var html1=$(this).find("html").text();
                                     $('#bl_text').html(html1);       
                                      var img=$(this).find("img").text();
-                                    $('#bl_img').attr('src',img);                                
+                                    $('#bl_img').attr('src',img); 
+                                      var date=$(this).find("date").text();
+                                    $('#blog_date').html(date);                          
                                 });
                             },
                               //发生错误时执行此函数           
@@ -70,6 +75,34 @@
                       );
                             
 				});
+				
+  		 function Urlid() {
+		  		 var name,value;
+		  		 var str=location.href; //取得整个地址栏
+		  		 var num=str.indexOf("?");
+		 		  str=str.substr(num+1); //取得所有参数   stringvar.substr(start [, length ]
+		  		 var arr=str.split("&"); //各个参数放到数组里
+		  		  console.log(arr);
+		  		 for(var i=0;i < arr.length;i++){
+		  		      num=arr[i].indexOf("=");
+		   		     if(num>0){
+		   		          name=arr[i].substring(0,num);
+		   		          value=arr[i].substr(num+1);
+		    		    }
+		    		    return value;
+		    		}
+		    	}
+
+
+
+
+
+
+
+
+
+
+
 			</script>
 
 			

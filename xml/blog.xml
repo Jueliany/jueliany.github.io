@@ -1,13 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
-  <text>
+   <blog category="01">
+  	<ide>2018-5-22</ide>
+  	<title>RNG季中赛夺冠，我们是冠军！</title>
+  	<bf>游戏相关</bf>
+  	<author>Jueliany</author>
+  	<html>
+  		   2016年，首次获得LPL冠军的RNG曾出征MSI，却止步四强。两年后，全华班卷土重来，在小组赛濒临被淘汰的情况下上演“绝地反击”，以小组头名出线，并在四强赛中横扫FNC进入决赛。又是熟悉的“中韩对决”，这次LPL没有成为失败者，Uzi率领全华班完胜KZ，让中国电竞，站上了世界的最高峰。
+  		  
+  	</html>
+  	 <img>/img/rng/01.jpg</img>
+  	 <date>2018-5-22</date>
+  </blog>
+   <blog category="01">
+  	<ide>2018-5-28</ide>
   	<title>林青霞简介</title>
   	<bf>影视相关</bf>
   	<author>陈志远</author>
   	<html>
-  		   林青霞（Brigitte Lin），1954年11月3日出生在中国台湾省新北三重区，祖籍山东莱阳。 1973年在台北西门町被星探发现出演处女作电影《窗外》女主角江雁容，1976年凭《八百壮士》荣获亚太电影节最佳女主角。1984年将事业重心移入香港，1990年凭《滚滚红尘》获得第27届台湾电影金马奖最佳女主角。1992年与徐克导演合作电影《笑傲江湖之东方不败》，塑造出东方不败这一经典角色。1994年告别影坛，此后不定期为多家报纸撰写专栏，并于2011年推出散文集《窗里窗外》。2014年出版第二本散文集《云去云来》（第一本林青霞有声书）。
+  		   林青霞（Brigitte Lin），1954年11月3日出生在中国台湾省新北三重区，祖籍山东莱阳。 1973年在台北西门町被星探发现出演处女作电影《窗外》女主角江雁容，1976年凭《八百壮士》荣获亚太电影节最佳女主角。1984年将事业重心移入香港，1990年凭《滚滚红尘》获得第27届台湾电影金马奖最佳女主角。
   		  
   	</html>
-  	 <img>/img/goddess/01.jpg</img>
-  </text>
+  	 <img>/img/goddess/01.jpg</img>                        
+  	 <date>2018-5-28</date>
+  </blog>
+
+  <blog category="02">
+  	<ide>2018-5-28</ide>
+  	<title>大介</title>
+  	<bf>CSS</bf>
+  	<author>jueliany</author>
+  	<html>
+  		   2222222222222222222225555		  
+  	</html>
+  	 <img>/img/goddess/02.jpg</img>
+  	  <date>2018-4-28</date>
+  </blog>
+
+  <blog category="03">
+  	<ide>2018-5-28</ide>
+  	<title>大大</title>
+  	<bf>HTML</bf>
+  	<author>jueliany</author>
+  	<html>
+  		   5333333333333333333333355555555555		  
+  	</html>
+  	 <img>/img/goddess/02.jpg</img>
+  	 <date>2018-3-28</date>
+  </blog>
+
+  <blog category="04">
+  	<ide>2018-5-28</ide>
+  	<title>大大简介</title>
+  	<bf>JS</bf>
+  	<author>jueliany</author>
+  	<html>
+  		   4444445		  
+  	</html>
+  	 <img>/img/goddess/02.jpg</img>
+  	 <date>2018-2-28</date>
+  </blog>
+
+
+
+
 </note>
