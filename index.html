@@ -11,10 +11,8 @@
 </head>
 <body>
 	<header>
-		<div class="logo"></div>
 		<div class="top">
-			<h1 class="logo_font fl">宁静致远</h1>
-			<ul class="navigation fr">
+			<ul class="navigation1 fr">
 				<li><a href="index.html">首页</a></li>
 				<li><a href="blog.html">博文</a></li>
 				<li><a href="Aboutme.html">关于</a></li>
@@ -36,14 +34,14 @@
 						<a class='blog_title fl' :href='item.herf'>{{item.title}}</a>
 					</h3>
 					<p class="blog_info fl">
-						<a class="blog_pic fl" href="">
+						<a class="blog_pic fl" :href='item.herf'>
 							<img  :src='item.img'>
 						</a>
 						{{item.text}}			
 					</p>					
 					<p class="bottom_info fl">
 						<span class="time fl">{{item.date}}	</span>
-						<a class="goto_blog fr" href="">阅读原文>></a>
+						<a class="goto_blog fr" :href='item.herf'>阅读原文>></a>
 					</p>
 					<div class="line fl"></div>
 				</li>
@@ -52,24 +50,11 @@
 			</ul>
 
 			<script type="text/javascript">
-				
-
-
-
-				// Vue.component('NewBlog', {
-				// 	props:["content"],
-				// 	template:`<li><slot></slot></li>`,
-				// 	data(){
-				// 		return{
-				// 			img:content.img
-				// 		}
-				// 	}
-				// });
-
+			
 				var vm = new Vue({
 					el:"#root",
 					data:{
-						list:[{'title':'1','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''}]
+						list:[{'title':'1','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''}]
 					},					
 					beforeMount:function(){
 						const self=this;
@@ -104,13 +89,9 @@
                             }
                             }
 
-                      );
-		               
-		               
+                      ); 
 
                     }
-                      
-				
 		            })
 
 
@@ -132,7 +113,7 @@
 				<ul class="link_list">
 					<li><a href="https://weibo.com/u/1549701483/">个人微博</a></li>
 					<li><a href="https://github.com/Jueliany/">Github</a></li>
-					<li><a href="mailto:494228569@qq.com">联系方式</a></li>
+					<li><a href="javascript:alert('QQ：494228569\nTel：15622285003\nmail：jueliany@foxmail.com')">联系方式</a></li>
 				</ul>
 			</div>
 			<div class="weixin fl">

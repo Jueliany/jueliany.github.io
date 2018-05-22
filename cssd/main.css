@@ -53,17 +53,18 @@ header{
 			color: #fff;
 		}
 
-		.navigation *{
+		.navigation1 *{
 			float: left;	
 		}
-		.navigation a{
+		.navigation1 a{
 			line-height: 46px;
 			padding:0 30px;
 			color: #fff;
+			font-size: 18px;
 		}
-		.navigation li:hover a{color: #fff;background-color: #666;}
-		.logo_font{
-		font-size: 1.5em;
+		.navigation1 li:hover a{color: #fff;background-color: #666;}
+		.logo_font1{
+		
 		padding: 9px 0 0 0;
 
 		}

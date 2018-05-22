@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+	<blog category="06">
+     <ide>2018-5-20</ide>
+  	<title>CSS3多列布局实现瀑布流布局</title>
+  	<bf>CSS</bf>
+  	<author>Jueliany</author>
+  	<html>
+  		   瀑布流布局有一个专业的英文名称Masonry Layouts。瀑布流布局已经有好多年的历史了，我最早知道这个名词的时候大约是在2012年，当时Pinterest网站的布局就是使用的这种流式布局，简言之像Pinterest网站这样的布局就称之为瀑布流布局，也有人称之为Pinterest 布局。
+  	</html>
+  	<img>/img/pubu.jpg</img>
+    <articles>
+  瀑布布局有JS，JQ等实现,而CSS实现其中一种可响应式的实现依靠CSS3的columns
+CSS3 定义。W3C 中有讲述关于多列布局的文档：
+由浏览器直接渲染出来，可以指定容器的列个数，列间距，列中间边框，列宽度来实现；
+多列布局属性：
+columns 集成 column-width 和 column-count 两个属性
+column-width  定义每列列宽度
+column-count  定义分分列列数
+column-gap  定义列间距
+column-rule 定义列边框
+column-span 定义多列布局中子元素跨列效果，firefox  不支持
+column-fill 控制每列的列高效果，主流浏览器不支持
+
+column属性如果只设置了column-width和column-gap它就会根据页面宽度分成N=parents-width/（column-width+column-gap）栏，实现响应式布局，例子如下：
+
+ul{
+/* 栏宽度 */
+-webkit-column-width:160px;
+-moz-column-width:160px;
+-o-colum-width:160px;
+column-width:160px;
+/* 两栏之间的间距 */
+-webkit-column-gap:1px;
+-moz-column-gap:1px;
+-o-column-gap:1px;
+column-gap:1px;
+}
+li{
+background:#0CF;
+border:#069 1px solid;
+display:inline-block;
+width:150px;
+margin:5px 0;
+}
+&lt;a href='pubu.html' target='_blank' &gt;  例子连接&lt;/a &gt;
+
+优点:
+直接 CSS 定义，最方便了；
+扩展方便，直接往容器里添加内容即可。
+
+缺点:
+只有高级浏览器中才能使用；
+还有一个缺点，他的数据块排列是从上到下排列到一定高度后，再把剩余元素依次添加到下一列，这个本质上就不一样了；
+鉴于这两个主要缺点，注定了该方法只能局限于高端浏览器，而且，更适合于文字多栏排列。
+
+
+
+
+    </articles>
+  	<date>2018-5-20</date>
+
+  	
+  </blog>
+</note>

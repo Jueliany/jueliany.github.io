@@ -12,13 +12,11 @@
 </head>
 <body>
 	<header>
-		<div class="logo"></div>
 		<div class="top">
-			<h1 class="logo_font fl">宁静致远</h1>
-			<ul class="navigation fr">
+			<ul class="navigation1 fr">
 				<li><a href="index.html">首页</a></li>
 				<li><a href="blog.html">博文</a></li>
-				<li><a href="">关于</a></li>
+				<li><a href="Aboutme.html">关于</a></li>
 			</ul>
 		</div>
 		<div class="m_top"></div>
@@ -28,21 +26,22 @@
 			<!-- 预留 -->
 		</div>
 		<div class="blog_text fl">
-			<p class="blog_position"><span>当前：</span><a href="">首页</a>>
-			<a href="">博文</a>>
+			<p class="blog_position"><span>当前：</span><a href="index.html">首页</a>>
+			<a href="blog.html">博文</a>>
 			<a id="bf" href=""></a></p>
-			<h3  id="blog_text_title" class="blog_text_title" >林青霞电影动图</h3>
-			<p><span id="author" class="author">陈志远</span><span class="blog_date">2018-05-14</span></p>
+			<h3  id="blog_text_title" class="blog_text_title" ></h3>
+			<p><span id="author" class="author"></span><span class="blog_date">2018-05-14</span></p>
     		<div class="blog_area">
-			<span id="bl_text">
-			</span><br><br>
-			<img id="bl_img" src="" />
-			<p  id="bl_img_title"><br><br><br></p>
+				<span id="bl_text">
+				</span><br><br>
+				<img id="bl_img" src="" />
+				<pre class="articles_text" id="articles"></pre>
 		    </div>
 			<script type="text/javascript">
 
 				$(document).ready(function(){
 					var id=Urlid();
+					alert
                       $.ajax(
                             {
                             url:"/xml/"+id+".xml",      //发送请求的文件
@@ -61,15 +60,20 @@
                                      var img=$(this).find("img").text();
                                     $('#bl_img').attr('src',img); 
                                       var date=$(this).find("date").text();
-                                    $('#blog_date').html(date);                          
+                                    $('#blog_date').html(date);  
+                                     var articles=$(this).find("articles").text();
+                                    $('#articles').html(articles);
+
+
+
                                 });
                             },
                               //发生错误时执行此函数           
                               //XMLHttpRequest.status表示请求状态，200表示成功
                               //XMLHttpRequest.readyState表示接收状态4表示接收完毕
                             error:function(XMLHttpRequest, textStatus, errorThrown){
-                                alert(XMLHttpRequest.status);
-                                alert(XMLHttpRequest.readyState);
+                               // alert(XMLHttpRequest.status);
+                               // alert(XMLHttpRequest.readyState);
                             }
                             }
                       );
@@ -92,16 +96,6 @@
 		    		    return value;
 		    		}
 		    	}
-
-
-
-
-
-
-
-
-
-
 
 			</script>
 

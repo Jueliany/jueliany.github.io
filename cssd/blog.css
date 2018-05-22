@@ -10,4 +10,6 @@
 .author{color: #000; background: url('/img/author2.png') no-repeat ; padding-left: 20px ; background-position: 0px 2px ; float: left;}
 .blog_date{background: url('/img/date.png') no-repeat ; padding-left: 20px ; background-position: 0px 2px ;color: #888;margin-left: 10px}
 .blog_area{margin: 20px 0; text-align: left;padding:0 4px;text-indent:2em; }
-.blog_area span{line-height: 24px;text-align: left;color: #666}
+.blog_area span{line-height: 24px;text-align: left;color: #999}
+.articles_text{white-space: pre-wrap;word-wrap: break-word; width: 100%;line-height: 28px; ;}
+.blog_area img{width: 700px;height: auto;}
