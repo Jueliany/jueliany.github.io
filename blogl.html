@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Jueliany</title>	
-	<link rel="stylesheet"  href="/cssd/reset.css">
-	<link rel="stylesheet"  href="/cssd/main.css">
-	<link rel="stylesheet"  href="/cssd/blog.css">
+	<link rel="stylesheet"  href="./cssd/reset.css">
+	<link rel="stylesheet"  href="./cssd/main.css">
+	<link rel="stylesheet"  href="./cssd/blog.css">
 	 <link rel="icon" href="/img/favicon.ico">
-	 <script type="text/javascript" src="/JS/jquery-3.3.1.js"></script>
+	 <script type="text/javascript" src="./JS/jquery-3.3.1.js"></script>
 	  <script  src="/JS/Vue.js"></script>
 </head>
 <body>
@@ -44,7 +44,7 @@
 					alert
                       $.ajax(
                             {
-                            url:"/xml/"+id+".xml",      //发送请求的文件
+                            url:"./xml/"+id+".xml",      //发送请求的文件
                             type:"get",          //设置提交方式
                             dataType:"xml",       //接收服务端数据的格式
                             success:function(xml){   //发送成功时执行这个函数，xml代表返回的xml形式的数据
