@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
 	<blog category="06">
+    <classify>CSS</classify>
      <ide>2018-5-20</ide>
   	<title>CSS3多列布局实现瀑布流布局</title>
   	<bf>CSS</bf>

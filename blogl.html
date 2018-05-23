@@ -28,7 +28,7 @@
 		<div class="blog_text fl">
 			<p class="blog_position"><span>当前：</span><a href="index.html">首页</a>>
 			<a href="blog.html">博文</a>>
-			<a id="bf" href=""></a></p>
+			<a id="bf" href=""></a>>正文</p>
 			<h3  id="blog_text_title" class="blog_text_title" ></h3>
 			<p><span id="author" class="author"></span><span class="blog_date">2018-05-14</span></p>
     		<div class="blog_area">
@@ -53,6 +53,8 @@
                                     $('#blog_text_title').html(title );
                                     var bf = $(this).find("bf").text();
                                     $('#bf').html(bf);
+                                    var classify="/blog.html?classify="+$(this).find("classify").text();
+                                    $('#bf').attr('href',classify); 
                                     var author = $(this).find("author").text();
                                      $('#author').html(author);
                                     var html1=$(this).find("html").text();
@@ -63,7 +65,6 @@
                                     $('#blog_date').html(date);  
                                      var articles=$(this).find("articles").text();
                                     $('#articles').html(articles);
-
 
 
                                 });

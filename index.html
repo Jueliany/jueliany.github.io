@@ -30,7 +30,7 @@
 				<template :content="item" v-for="item of list">
 					<li>
 					<h3 class="title_top">
-						<a class="blog_classify fl" href="">{{item.bf}}</a>						
+						<a class="blog_classify fl" :href='item.classify'>{{item.bf}}</a>						
 						<a class='blog_title fl' :href='item.herf'>{{item.title}}</a>
 					</h3>
 					<p class="blog_info fl">
@@ -54,7 +54,7 @@
 				var vm = new Vue({
 					el:"#root",
 					data:{
-						list:[{'title':'1','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''},{'title':'','bf':'','text':'','img':''}]
+						list:[]
 					},					
 					beforeMount:function(){
 						const self=this;
@@ -70,13 +70,18 @@
                            
                             success:function(xml){   //发送成功时执行这个函数，xml代表返回的xml形式的数据
                                 $(xml).find("blog").each(function(){
-                                   lists[i].title = $(this).find("title").text();
-                                   lists[i].bf = $(this).find("bf").text();
-                                   lists[i].text = $(this).find("html").text();
-                                   lists[i].img = $(this).find("img").text();
-                                   lists[i].date = $(this).find("date").text();
-                                   lists[i].herf ="/blogl.html?id="+ $(this).find("ide").text();
+                                   var	list={};
+                                   list.title = $(this).find("title").text();
+                                   list.bf = $(this).find("bf").text();
+                                   list.text = $(this).find("html").text();
+                                   list.img = $(this).find("img").text();
+                                   list.date = $(this).find("date").text();
+                                   list.herf ="/blogl.html?id="+ $(this).find("ide").text();
+                                   list.classify="/blog.html?classify="+$(this).find("classify").text();
                                    i++;
+                                   lists.push(list);
+
+                                   if(i>=5){return false;}
                                                                   
                                 });
                             },

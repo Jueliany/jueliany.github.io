@@ -2,7 +2,7 @@
 .search{height: 70px;}
 .search_text{ padding-left: 5px; width: 213px;height: 28px; background-color:#EDEDED; margin:20px 0 20px 25px;font-size: 14px; float: left; border-radius: 5px 0 0 5px; border:1px solid #999; }
 .search_button{width: 60px; font-size: 14px;height: 30px; margin:20px 0 20px 0px; float: left;background-color: #333;border: none;border-radius: 0 5px 5px 0; color: #fff;text-align: center;line-height: 30px}
-.blog_text{min-height: 1060px; padding:20px;  ;font-size: 14px;box-shadow:2px 2px 10px 0px #999;width: 710px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;}
+.blog_text{min-height: 900px; padding:20px;  ;font-size: 14px;box-shadow:2px 2px 10px 0px #999;width: 710px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;}
 .blog_position{padding: 10px 0;border-bottom: 2px solid #333; }
 .blog_position span{font-weight: bold;}
 .blog_position a{ color: #333; }
@@ -13,3 +13,30 @@
 .blog_area span{line-height: 24px;text-align: left;color: #999}
 .articles_text{white-space: pre-wrap;word-wrap: break-word; width: 100%;line-height: 28px; ;}
 .blog_area img{width: 700px;height: auto;}
+.blog_type_list{width: 320px;}
+.blog_type_list ul{margin:10px 15px; t; }
+.blog_type_list a{display: block; width: 300px; line-height: 30px;font-size: 14px; color: #134}
+.blog_type_list a:hover{background-color: #F8F8f8; color: red}
+.count_num{float: right; font-size: 0.8em;color: #999; }
+.change_list{ text-align: right; height: 44px;line-height: 46px;font-size: 14px; border-bottom:1px solid #eee; }
+.change_list a{ margin: 0 5px 0 5px; color: #333; }
+.change_list a:hover{color: blue;}
+.blog_lists{border-bottom:1px solid #eee;  }
+.blog_lists ul li {height: 36px;line-height: 36px; color:#444}
+.blog_lists_title {height: 36px;line-height: 36px; color: #444;font-size: 1.1em;}
+.blog_lists ul li:hover {background-color: #F8F8f8;text-decoration: underline }
+.bl_type{height: 28px;line-height:30px;float: left; width: 66px; font-size: 14px;background-color: #aaa;line-height: 30px;text-align: center;color: #fff; border-radius: 3px; margin:3px  10px 3px 0;;}
+.bl_updata_time{float: right; font-size: 0.9em; color: #bbb}
+.blog_lists_index{text-align: center; padding:8px 0px; height: 22px;line-height: 24px; width: 100%;}
+.blog_lists_index a{padding: 0px 5px; font-size: 0.9em; color:#333; }
+.blog_lists_index a:hover{color: blue;}
+#previous{}
+#next{}
+#list_index{}
+#queding{height: 22px; width: 50px;border: 1px solid #666; background-color: #888;color: #fff;22px;margin:0 10px;}
+#yeshu{width: 24px; border:1px solid #eee ; text-align: center;height: 22px;margin:0 5px; }
+.blog_word1 {display: none;}
+.blog_word1 li{border-bottom: 1px solid #e5e5e5;font-size: 14px;color: #555;float: left; width: 730px; }
+.blog_word1 li img{width: 220px;height: 100px;}
+
+

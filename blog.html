@@ -7,6 +7,27 @@
 	<link rel="stylesheet"  href="./cssd/main.css">
 	<link rel="stylesheet"  href="./cssd/blog.css">
 	 <link rel="icon" href="/img/favicon.ico">
+
+	 <script  src="/JS/Vue.js"></script>
+	 <script type="text/javascript" src="/JS/jquery-3.3.1.js"></script>
+	 <script type="text/javascript">
+	 	function Change_List(){
+					var change_style=$('#change_style');
+					var list_style1=$('#list_style1');
+					var list_style2=$('#list_style2');
+					if(change_style.html()=="切换到摘要模式"){
+						list_style1.hide();
+						list_style2.show();
+						change_style.html("切换到列表模式");
+					}else{
+						list_style2.hide();
+						list_style1.show();
+						change_style.html("切换到摘要模式");
+					};
+
+				}
+
+	 </script>
 </head>
 <body>
 	<header>
@@ -19,38 +40,56 @@
 		</div>
 		<div class="m_top"></div>
 	</header>
-	<article>
-		
-		<div class="blog_text fl">
+	<article id="blog_lists">
+		<div class="banner">
+			<!-- 预留 -->
+		</div>
+		<div class="blog_text  fl">
 			<p class="blog_position"><span>当前：</span><a href="index.html">首页</a>>
 			<a href="">博文</a>
-			<h3 class="blog_text_title" >还未完成</h3>
-			<p><span class="author">陈志远</span><span class="blog_date">2018-05-14</span></p>
-    		<!-- <div class="blog_area">
-			<span>
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp林青霞（Brigitte Lin），1954年11月3日出生在中国台湾省新北三重区，祖籍山东莱阳。
-			1973年在台北西门町被星探发现出演处女作电影《窗外》女主角江雁容，1976年凭《八百壮士》荣获亚太电影节最佳女主角。1984年将事业重心移入香港，1990年凭《滚滚红尘》获得第27届台湾电影金马奖最佳女主角。1992年与徐克导演合作电影《笑傲江湖之东方不败》，塑造出东方不败这一经典角色。1994年告别影坛，此后不定期为多家报纸撰写专栏，并于2011年推出散文集《窗里窗外》。2014年出版第二本散文集《云去云来》（第一本林青霞有声书）。</span><br><br>
-			<img src="/img/goddess/01.jpg"/>
-			<p><br>我是一片云<br><br></p>
-			<img src="/img/goddess/05.gif"/>
-			<p><br>一颗红豆<br><br></p>
-			<img src="/img/goddess/04.gif"/>
-			<p><br>刀马旦<br><br></p>
-			<img src="/img/goddess/07.jpg"/>
-			<p><br>蜀山剑侠传<br><br></p>
-			<img src="/img/goddess/02.jpg"/>
-			<p><br>流星蝴蝶剑<br><br></p>
-			<img src="/img/goddess/03.jpg"/>
-			<p><br>东方不败<br><br></p>
-			
-			
-			<img src="/img/goddess/06.jpg"/>
-			<p><br>东方不败<br><br></p>
-			
-			<img src="/img/goddess/08.jpg"/>
-			<p><br>东方不败<br><br></p>
+			<p class="change_list"> <a id="change_style"  onclick="Change_List()">切换到摘要模式</a></p>
+			<div >
+
+			<div class="blog_lists" id="list_style1">
+				<ul>
+					<template :content="item" v-for="item of list">
+					<li><a class="bl_type" :href="item.classify">{{item.bf}}</a><a class="blog_lists_title" :href='item.herf'>{{item.title}}</a><span class="bl_updata_time">{{item.date}}</span></li>
+				</template>
+				</ul>
 			</div>
- -->
+
+			<div class="blog_word1" id="list_style2">
+				<ul >
+					<template :content="item" v-for="item of list">
+						<li>
+							<h3 class="title_top">
+								<a class="blog_classify fl" :href="item.classify">{{item.bf}}</a>						
+								<a class='blog_title fl' :href='item.herf'>{{item.title}}</a>
+							</h3>
+							<p class="blog_info fl">
+								<a class="blog_pic fl" :href='item.herf'>
+									<img  :src='item.img'>
+								</a>
+								{{item.text}}			
+							</p>					
+							<p class="bottom_info fl">
+								<span class="time fl">{{item.date}}	</span>
+								<a class="goto_blog fr" :href='item.herf'>阅读原文>></a>
+							</p>
+						</li>
+					</template>
+				</ul>
+				</div>
+
+				
+				
+			
+
+			</div>
+			<div class="blog_lists_index">
+				<a href="" id="previous">上一页</a><a id="lists_index" href="">1</a><a class="next" href="">下一页</a> 转到<input id="yeshu" type="text" name="yeshu" />页<button id="queding" href="">确定</button>
+			</div>
+			
 			
 		</div>
 		<div class="right_list fr ">
@@ -60,21 +99,24 @@
 
 
 
-			<div class="person_info fl">
-				 <div class="bgpic"  > <img class="touxiang" src="img/touxiang.jpg" /></div>
-				
-				<h5 class="person_name">Jueliany | 陈志远</h5>
-				<p class="person_position">Web前端方向、网页设计</p>
-				<p class="person_text">一个90后大学生，有理想有干劲，2017学习前端，目标前端“攻城狮”。既然选择了远方，便只顾风雨兼程。既然目标是地平线，留给世界的只能是背影 </p>
+			<div class="blog_type_list fl">
+				<h2 class="module_name  ">个人分类</h2>
+				<ul class="type_list">
+					<template  :content="item" v-for="item of bl_type">
+						<li><a :href='"/blog.html?classify="+ item.classify'>{{item.name}}<span class="count_num">({{item.num}})</span></a></li>
+					</template>
+				</ul>
 
 			</div>
 			
 			<div class="link fl">
 				<h2 class="module_name  ">个人连接</h2>
 				<ul class="link_list">
+					
 					<li><a href="https://weibo.com/u/1549701483/">个人微博</a></li>
 					<li><a href="https://github.com/Jueliany/">Github</a></li>
 					<li><a href="mailto:494228569@qq.com">联系方式</a></li>
+				
 				</ul>
 			</div>
 			<div class="weixin fl">
@@ -88,6 +130,84 @@
 	<footer>
 		<p ><a href="mailto:jueliany@foxmail.com">Jueliany</a> @2017-2018  |  Github Pages </p>
 	</footer>
+	<script type="text/javascript">	
+				var cla=Urlid();
+				var vm = new Vue({
+					el:"#blog_lists",
+					data:{
+						cla,
+						list:[],
+						bl_type:[{'name':'CSS','classify':'CSS','num':0},{'name':'游戏相关','classify':'game','num':0},{'name':'影视相关','classify':'movie','num':0}]
+					},					
+					beforeMount:function(){
+						const self=this;
+						lists=self.list;
+						bl_type=self.bl_type;
+						
+						console.log(self.cla);
+						var i=0;
+		               $.ajax(
+                            {
+                            url:"./xml/blog.xml",      //发送请求的文件
+                            type:"get",          //设置提交方式
+                            dataType:"xml",   
+                                //接收服务端数据的格式                           
+                            success:function(xml){   //发送成功时执行这个函数，xml代表返回的xml形式的数据
+
+                                $(xml).find("blog").each(function(){
+                                	   var list={};
+	                                   list.title = $(this).find("title").text();
+	                                   list.bf = $(this).find("bf").text();
+	                                   for(j in bl_type){
+	                                   	if(list.bf==bl_type[j].name)bl_type[j].num++;
+	                                   }
+	                                   list.classify="/blog.html?classify="+$(this).find("classify").text();
+	                                   list.text = $(this).find("html").text();
+	                                   list.img = $(this).find("img").text();
+	                                   list.date = $(this).find("date").text();
+	                                   list.herf ="/blogl.html?id="+ $(this).find("ide").text();
+	                                if(self.cla=="all"||self.cla==$(this).find("classify").text())
+                                   {
+	                                   lists.push(list);     
+	                                }
+                                                                  
+                                });
+                            },
+                              //发生错误时执行此函数           
+                              //XMLHttpRequest.status表示请求状态，200表示成功
+                              //XMLHttpRequest.readyState表示接收状态4表示接收完毕
+                            error:function(XMLHttpRequest, textStatus, errorThrown){
+                                alert(XMLHttpRequest.status);
+                                alert(XMLHttpRequest.readyState);
+                            }
+                            }
+
+                      ); 
+
+                    }
+		            })
+				 function Urlid() {
+		  		 var name,value="all";
+		  		 var str=location.href; //取得整个地址栏
+		  		 var num=str.indexOf("?");
+		 		  str=str.substr(num+1); //取得所有参数   stringvar.substr(start [, length ]
+		 		   console.log(1);
+		  		 var arr=str.split("&"); //各个参数放到数组里
+		  		 console.log(2);
+		  		 for(var i=0;i < arr.length;i++){
+		  		      num=arr[i].indexOf("=");
+		  		       console.log(3);
+		   		     if(num>0){
+		   		          name=arr[i].substring(0,num);
+		   		          value=arr[i].substr(num+1);
+		    		    }
+		    		    return value;
+		    		}
+		    		 
+		    	}
+				
+
+			</script>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
 	<blog category="06">
-     <id>5-22-1</id>
+     <ide>2018-5-22</ide>
+     <classify>game</classify>
   	<title>RNG季中赛夺冠，我们是冠军！</title>
   	<bf>游戏相关</bf>
   	<author>Jueliany</author>
@@ -35,7 +36,5 @@
 
     </articles>
   	<date>2018-5-22</date>
-
-  	
   </blog>
 </note>
