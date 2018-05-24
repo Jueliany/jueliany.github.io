@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <script type="text/javascript" src="../JS/jquery-3.3.1.js"></script>
+	<style type="text/css">
+	*{margin: 0;padding: 0;border: 0;}
+		
+		body{background-color: #eee;overflow: hidden; height: 100%;font-size: 24px;word-wrap: break-word;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.container{height: 38.4em;width: 21.6em;margin: 0 auto; box-shadow: 0.02em 0.02em 0.02em #666;}
+		.header{height: 3em;width: 100%;background-color: #373b3e;}
+		.header img{height: 1.2em; width: 1.2em;padding: 0.9em;float: left;}
+		.img2{margin-left:12em; }
+		.header span{font-size: 1em;color: #fff;font-weight:bold;margin: 0.9em 0;float: left;}
+		.footer{height: 3em;width: 100%;background-color: #f3f3f3;position: relative;}
+		.footer *{float: left; }
+		.footer>img{ height: 1.92em;width: 1.92em;margin: .54em 0 .54em .54em; }
+		.footer input{ height:2em;width: 16.25em; font-size: 0.8em; padding-left: 0.2em;margin: .70em 0 .70em .54em; }
+		.footer div{ height: 2em;width: 14.44em; line-height: 1.84em;text-align: center;border: 0.06em solid #444;border-radius: 0.2em;font-size: 0.9em;display: none; ;margin: .54em 0 .54em .54em;}
+		.footer a{font-size: 0.8em;padding: 0.25em 0.375em; line-height: 1.5em;height: 1.5em;background-color:#00cc33; text-decoration: none;color:#fff; border-radius: 0.125em; margin: .70em 0 .54em .54em;}
+		.main{background-color: #eee;width: 100%;padding: 0.4em;box-sizing: border-box;overflow:auto;height:32.4em;}
+		.clear{clear:both; margin:0px; border:0px; padding:0px;}
+		.main li{ margin-bottom: 0.6rem;display: block;clear: both; overflow: hidden; position: relative; }		
+        .text{ border-radius: 0.25em;max-width: 18.5em; padding: 0.4em 0.8em;margin: 0 0.7em 0 0.7em;font-size: .8em;line-height: 2.1em;box-sizing: border-box;vertical-align: middle;word-wrap: break-word;}
+		.an span{ background-color: #fff; }	 
+		.an div i{display:block; position: absolute;background-color: #000;height:0;width:0;left:2.56em; top:0.6em;border-left: 0; border-right: 0.4em solid #fff;border-top: 0.4em solid #eee;border-bottom: 0.4em solid #eee; }
+		.to span{background-color: #00cc33;}
+		.to div i{display:block; position: absolute;background-color: #000;height:0;width:0;left:auto; right:  2.6em ;top:0.6em;border-right:  0; border-left: 0.4em solid #00cc33;border-top: 0.4em solid #eee;border-bottom: 0.4em solid #eee; }
+		.touxiang{ height:2.4em;width: 2.4em;border-radius: 0.2em; }
+		.yuyin_img{display: none; position: absolute; width: 10em;height: 10em;top: -12em;left: 5.8em;}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img  src="箭头左粗.png">
+			<span >Jueliay</span>
+			<img class="img2" src="人.png">
+		</div>
+		<ul id="main" class="main">
+			<li class="an">
+				<img class="touxiang fl" src="头像2.jpg">
+				 <div >
+				 	<span class="text fl">你好我是滴答是是滴答是滴答是滴答是滴答滴答是滴答滴答滴答滴</span>
+				 	<i></i>
+				 </div>
+				<div class="clear"></div>
+
+			</li>
+		
+		</ul>
+		<div class="footer">
+			<img id="send_type" title="yuyin" src="yuyin.png">
+			<input id="in_text" type="text" name=""/>
+			<div id="yuyin" class="yuyin">按住 说话</div>
+			<img src="表情.png">
+			<a id="send" >发送</a>
+			<span><img id="yuyin_img" class="yuyin_img" src="语音.png" /></span>
+		</div>
+
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+					var send=$('#send');
+
+					send.on('click',function(){ 
+						var main=$('#main'); 
+	     				var text=$('#in_text');     				
+	     				if(text.val()==''){
+	     					alert("输入为空");
+	     				}else{
+	     					new_text='<li  class="to"><img class="touxiang fr" src="头像1.jpg"> <div ><span class="text fr">'+text.val()+'</span><i></i></div><div class="clear"></div></li>';
+	     					main.append(new_text);
+	     					text.val('');
+	     					}
+ 					});
+
+ 					var send_type=$('#send_type');
+ 					send_type.on('click',function(){ 
+ 						var yuyin=$('#yuyin');
+ 						var in_text=$('#in_text');
+	 					var img=["yuyin.png","jianpang.png"] 
+	 					var imgtitle=send_type.attr("title");					
+	 					if(imgtitle=='yuyin'){
+	 						send_type.attr('title','jianpang');
+	 						send_type.attr('src','jianpang.png');
+	 						in_text.hide();
+	 						yuyin.show();
+
+	 					}else{
+	 						send_type.attr('title','yuyin');
+	 						send_type.attr('src','yuyin.png');
+	 						yuyin.hide();
+	 						in_text.show();	 
+	 					}						 						     				
+     				});	   
+
+     				var yuyin=$('#yuyin');
+     				var yuyin_img=	$('#yuyin_img')
+	 				yuyin.mousedown(function(){
+	 					yuyin.css("background-color","#fff");
+	 					yuyin_img.show();
+	 				});
+
+	 				yuyin.mouseup(function(){
+	 					yuyin.css("background-color","#f3f3f3");
+	 					yuyin_img.hide();
+	 				});
+                            
+				});
+		</script>
+	</div>
+</body>
+</html>
