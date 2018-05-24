@@ -29,23 +29,6 @@ header{
 		}
 		footer p{color: #a5a4a4;font-size: 14px;text-align:center;padding:  20px 10px;}
 		footer a{color:#00B8FF }
-
-
-		.logo{width: 30px;height: 30px; position:absolute;top: 8px ; 
-		animation: myfirst 10s linear 0s infinite alternate;
-		-moz-animation: myfirst 10s linear 0s infinite alternate; /* Firefox */
-		-webkit-animation: myfirst 10s linear 0s infinite alternate; /* Safari and Chrome */
-		-o-animation: myfirst 10s linear 0s infinite alternate; /* Opera */}
-		@keyframes myfirst
-		{
-		0%   {background: #fff;left: 480px; }
-		25%  {background: #fff;left: 1200px; }
-		50%  {background: #fff;left: 480px; }
-		100% {background: #fff;left: 1200px;}
-        }
-
-
-
 		.top {
 			width: 1200px;
 			height: 46px;
@@ -77,11 +60,9 @@ header{
 			width:1100px;
 		}
 
-		/*博文模块*/
-		.newblog{width: 750px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;;}
-
+		/*最新博文模块*/
+		.newblog{width: 750px;background-color: #eee;margin-left: 50px;margin_right:20px;background-color: #fff;}
 		.module_name{padding: 0 10px; line-height: 40px; height: 40px; font-size: 18px; border-bottom: 1px solid #e5e5e5; border-left: 5px solid #333; color: #333;} 
-		
 		.title_top{margin: 15px 0px;}
 		.blog_classify{height: 24px;width: 66px;font-size: 14px;background-color: #333;line-height: 24px;text-align: center;color: #fff; border-radius: 3px; margin-right: 20px;  }
 		.blog_classify:after{content: "";clear:both;display: block; position: relative; width:0px;height:0px;border-left: 6px solid #333 ;border-bottom: 6px solid transparent;border-top: 6px solid  transparent;top:-18px;right:-66px;margin: 0px;padding: 0px;}
@@ -102,14 +83,9 @@ header{
 		.blog_word li:hover .line {width: 100%;}
 		.blog_word li:last-child {}
 
-
-
 		.right_list{width: 330px;margin-right: 50px;}
 		.right_list>div{background-color: #fff;width: 100%;margin-bottom: 20px}
-
-		
 		/*推荐模块*/
-
 		.tj_list{padding: 10px;width: 310px;background-color: #fff;}
 		.tj_list li{padding-bottom: 10px;border-bottom: 1px solid #e5e5e5;margin-bottom: 10px; float: left;}
 
@@ -121,13 +97,11 @@ header{
 		.tj_list  li:hover i img { transform: scale(1.1) }
 		.tj_list p{line-height:  24px; color: #888}
 		.tj_list  li:hover p{color: #000}
-
 		/*连接*/
 		.link_list{width: 230px;height: 150px;padding: 20px 50px;}
 		.link_list li{height: 38px; width: 228px;text-align: center;border: 1px solid #888;margin-bottom: 10px;border-radius: 4px; }
 		.link_list li a{float:left; width:228px; height: 38px; line-height: 38px;font-size: 14px ;color: #444 }
 		.link_list li:hover a{color: #2FC;}
-
 		/*微信*/
 		.weixin img{
 			background-color: #fff;
