@@ -5,22 +5,32 @@
 	<title>Document</title>
 	 <script type="text/javascript" src="../JS/jquery-3.3.1.js"></script>
 	<style type="text/css">
-	*{margin: 0;padding: 0;border: 0;}
-		
+	*{margin: 0;padding: 0;border: 0;}	
 		body{background-color: #eee;overflow: hidden; height: 100%;font-size: 24px;word-wrap: break-word;}
+
+		/*z左右浮动*/
 		.fl{float: left;}
 		.fr{float: right;}
+
+		/*主体大小*/
 		.container{height: 38.4em;width: 21.6em;margin: 0 auto; box-shadow: 0.02em 0.02em 0.02em #666;}
+
+		/*头部*/
 		.header{height: 3em;width: 100%;background-color: #373b3e;}
 		.header img{height: 1.2em; width: 1.2em;padding: 0.9em;float: left;}
 		.img2{margin-left:12em; }
 		.header span{font-size: 1em;color: #fff;font-weight:bold;margin: 0.9em 0;float: left;}
+
+		/*底部*/
 		.footer{height: 3em;width: 100%;background-color: #f3f3f3;position: relative;}
 		.footer *{float: left; }
 		.footer>img{ height: 1.92em;width: 1.92em;margin: .54em 0 .54em .54em; }
 		.footer input{ height:2em;width: 16.25em; font-size: 0.8em; padding-left: 0.2em;margin: .70em 0 .70em .54em; }
 		.footer div{ height: 2em;width: 14.44em; line-height: 1.84em;text-align: center;border: 0.06em solid #444;border-radius: 0.2em;font-size: 0.9em;display: none; ;margin: .54em 0 .54em .54em;}
 		.footer a{font-size: 0.8em;padding: 0.25em 0.375em; line-height: 1.5em;height: 1.5em;background-color:#00cc33; text-decoration: none;color:#fff; border-radius: 0.125em; margin: .70em 0 .54em .54em;}
+		.yuyin_img{display: none; position: absolute; width: 10em;height: 10em;top: -12em;left: 5.8em;}
+
+		/*聊天窗口*/
 		.main{background-color: #eee;width: 100%;padding: 0.4em;box-sizing: border-box;overflow:auto;height:32.4em;}
 		.clear{clear:both; margin:0px; border:0px; padding:0px;}
 		.main li{ margin-bottom: 0.6rem;display: block;clear: both; overflow: hidden; position: relative; }		
@@ -30,7 +40,6 @@
 		.to span{background-color: #00cc33;}
 		.to div i{display:block; position: absolute;background-color: #000;height:0;width:0;left:auto; right:  2.6em ;top:0.6em;border-right:  0; border-left: 0.4em solid #00cc33;border-top: 0.4em solid #eee;border-bottom: 0.4em solid #eee; }
 		.touxiang{ height:2.4em;width: 2.4em;border-radius: 0.2em; }
-		.yuyin_img{display: none; position: absolute; width: 10em;height: 10em;top: -12em;left: 5.8em;}
 
 	</style>
 </head>
@@ -45,11 +54,10 @@
 			<li class="an">
 				<img class="touxiang fl" src="头像2.jpg">
 				 <div >
-				 	<span class="text fl">你好我是滴答是是滴答是滴答是滴答是滴答滴答是滴答滴答滴答滴</span>
+				 	<span class="text fl">你好我是陈志远！</span>
 				 	<i></i>
 				 </div>
 				<div class="clear"></div>
-
 			</li>
 		
 		</ul>
@@ -65,51 +73,54 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-
+				// 点击发送按钮
 					var send=$('#send');
-
 					send.on('click',function(){ 
+
 						var main=$('#main'); 
 	     				var text=$('#in_text');     				
 	     				if(text.val()==''){
-	     					alert("输入为空");
+	     					alert("输入为空"); //输入为空提醒
 	     				}else{
 	     					new_text='<li  class="to"><img class="touxiang fr" src="头像1.jpg"> <div ><span class="text fr">'+text.val()+'</span><i></i></div><div class="clear"></div></li>';
-	     					main.append(new_text);
-	     					text.val('');
+	     					main.append(new_text); //发送信息添加聊天窗口
+	     					text.val(''); //输入框重置
 	     					}
  					});
 
  					var send_type=$('#send_type');
  					send_type.on('click',function(){ 
+ 						//切换输入模式
  						var yuyin=$('#yuyin');
  						var in_text=$('#in_text');
 	 					var img=["yuyin.png","jianpang.png"] 
-	 					var imgtitle=send_type.attr("title");					
-	 					if(imgtitle=='yuyin'){
-	 						send_type.attr('title','jianpang');
-	 						send_type.attr('src','jianpang.png');
-	 						in_text.hide();
-	 						yuyin.show();
+	 					var imgtitle=send_type.attr("title");
 
-	 					}else{
-	 						send_type.attr('title','yuyin');
+	 					if(imgtitle=='yuyin'){//点击语音输入
+	 						send_type.attr('title','jianpang'); //图标换为键盘
+	 						send_type.attr('src','jianpang.png');
+	 						in_text.hide();//文本框隐藏
+	 						yuyin.show();//语音框弹出
+
+	 					}else{//点击键盘输入
+
+	 						send_type.attr('title','yuyin');//图标换为语音
 	 						send_type.attr('src','yuyin.png');
-	 						yuyin.hide();
-	 						in_text.show();	 
+	 						yuyin.hide();//语音框隐藏
+	 						in_text.show();	 //文本框弹出
 	 					}						 						     				
      				});	   
 
      				var yuyin=$('#yuyin');
      				var yuyin_img=	$('#yuyin_img')
-	 				yuyin.mousedown(function(){
-	 					yuyin.css("background-color","#fff");
-	 					yuyin_img.show();
+	 				yuyin.mousedown(function(){//点击 按住说话按钮
+	 					yuyin.css("background-color","#fff"); 
+	 					yuyin_img.show();//显示语音输入状态
 	 				});
 
-	 				yuyin.mouseup(function(){
+	 				yuyin.mouseup(function(){//松开 按住说话按钮
 	 					yuyin.css("background-color","#f3f3f3");
-	 					yuyin_img.hide();
+	 					yuyin_img.hide();//隐藏语音输入状态
 	 				});
                             
 				});
