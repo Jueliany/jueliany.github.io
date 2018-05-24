@@ -46,13 +46,13 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<img  src="箭头左粗.png">
+			<img  src="./img/箭头左粗.png">
 			<span >Jueliay</span>
-			<img class="img2" src="人.png">
+			<img class="img2" src="./img/人.png">
 		</div>
 		<ul id="main" class="main">
 			<li class="an">
-				<img class="touxiang fl" src="头像2.jpg">
+				<img class="touxiang fl" src="./img/头像2.jpg">
 				 <div >
 				 	<span class="text fl">你好我是陈志远！</span>
 				 	<i></i>
@@ -62,12 +62,12 @@
 		
 		</ul>
 		<div class="footer">
-			<img id="send_type" title="yuyin" src="yuyin.png">
+			<img id="send_type" title="yuyin" src="./img/yuyin.png">
 			<input id="in_text" type="text" name=""/>
 			<div id="yuyin" class="yuyin">按住 说话</div>
-			<img src="表情.png">
+			<img src="./img/表情.png">
 			<a id="send" >发送</a>
-			<span><img id="yuyin_img" class="yuyin_img" src="语音.png" /></span>
+			<span><img id="yuyin_img" class="yuyin_img" src="img/语音.png" /></span>
 		</div>
 
 
@@ -82,7 +82,7 @@
 	     				if(text.val()==''){
 	     					alert("输入为空"); //输入为空提醒
 	     				}else{
-	     					new_text='<li  class="to"><img class="touxiang fr" src="头像1.jpg"> <div ><span class="text fr">'+text.val()+'</span><i></i></div><div class="clear"></div></li>';
+	     					new_text='<li  class="to"><img class="touxiang fr" src="./img/头像1.jpg"> <div ><span class="text fr">'+text.val()+'</span><i></i></div><div class="clear"></div></li>';
 	     					main.append(new_text); //发送信息添加聊天窗口
 	     					text.val(''); //输入框重置
 	     					}
@@ -98,14 +98,14 @@
 
 	 					if(imgtitle=='yuyin'){//点击语音输入
 	 						send_type.attr('title','jianpang'); //图标换为键盘
-	 						send_type.attr('src','jianpang.png');
+	 						send_type.attr('src','./img/jianpang.png');
 	 						in_text.hide();//文本框隐藏
 	 						yuyin.show();//语音框弹出
 
 	 					}else{//点击键盘输入
 
 	 						send_type.attr('title','yuyin');//图标换为语音
-	 						send_type.attr('src','yuyin.png');
+	 						send_type.attr('src','./img/yuyin.png');
 	 						yuyin.hide();//语音框隐藏
 	 						in_text.show();	 //文本框弹出
 	 					}						 						     				
