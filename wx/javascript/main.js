@@ -24,14 +24,14 @@
 
 	 					if(imgtitle=='yuyin'){//点击语音输入
 	 						send_type.attr('title','jianpang'); //图标换为键盘
-	 						send_type.attr('src','../img/jianpang.png');
+	 						send_type.attr('src','./img/jianpang.png');
 	 						in_text.hide();//文本框隐藏
 	 						yuyin.show();//语音框弹出
 
 	 					}else{//点击键盘输入
 
 	 						send_type.attr('title','yuyin');//图标换为语音
-	 						send_type.attr('src','../img/yuyin.png');
+	 						send_type.attr('src','./img/yuyin.png');
 	 						yuyin.hide();//语音框隐藏
 	 						in_text.show();	 //文本框弹出
 	 					}						 						     				
