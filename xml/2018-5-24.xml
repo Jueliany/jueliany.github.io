@@ -7,10 +7,11 @@
   	<bf>JS</bf>
   	<author>Jueliany</author>
   	<html>
-  		   模拟微信聊天窗口	  
+  		   模仿微信聊天窗口	  
   	</html>
   	<img>/img/mofangweixin/01.jpg</img>
     <articles>
+      模仿微信基本聊天窗口界面，实现发送消息语音按钮等
       &lt;a href='/wx/weixin.html' target='_blank' &gt;  例子连接&lt;/a &gt;
     </articles>
   	<date>2018-5-24</date>
