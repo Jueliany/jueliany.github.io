@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+	<blog category="06">
+    <classify>Vue</classify>
+    <ide>2018-6-10</ide>
+    <title>基于Vue2.5模仿去哪儿网APP</title>
+    <bf>Vue</bf>
+    <author>Jueliany</author>
+    <html>
+    基于Vue2.5模仿去哪儿网APP，使用技术栈：vue2 + vue-router + webpack + ES6/7 + stylus
+实现了去哪儿网的首页，城市选择和详情展示页面。
+    </html>
+    <articles>
+
+         
+      &lt;a href='/demo/qunar/' target='_blank' &gt;  连接&lt;/a &gt;
+    </articles>
+     <img>/img/qunarapp/01.jpg</img>
+     <date>2018-6-10</date>
+  </blog>
+</note>
